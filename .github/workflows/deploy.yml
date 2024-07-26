@@ -18,9 +18,9 @@ jobs:
       # example-command "$SUPER_SECRET}}
       - name: Inject secrets into config
         run: |
-          echo "window._env_ = {GITHUB_TOKEN: '${{ secrets.MONGO_SERV }}'};" > public/env.js
+          echo "window._env_ = {GITHUB_TOKEN: '${{ secrets.MONGO_SERV }}'};" > env.js
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.MONGO_SERV }}
-          publish_dir: ./public
+          publish_dir: ./
