@@ -6,19 +6,20 @@ on:
       - main
 
 jobs:
+  build:
     steps:
-  - name: Hello world action
-    with: # Set the secret as an input
-      GITHUB_TOKEN: ${{ secrets.MONGO_SERV }}
-    env: # Or as an environment variable
-      GITHUB_TOKEN: ${{ secrets.MONGO_SERV }}
+      - name: Hello world action
+        with: # Set the secret as an input
+          GITHUB_TOKEN: ${{ secrets.MONGO_SERV }}
+        env: # Or as an environment variable
+          GITHUB_TOKEN: ${{ secrets.MONGO_SERV }}
 
-  - name: Inject secrets into config
-    run: |
-      echo "window._env_ = {GITHUB_TOKEN: '${{ secrets.MONGO_SERV }}'};" > public/env.js
+      - name: Inject secrets into config
+        run: |
+          echo "window._env_ = {GITHUB_TOKEN: '${{ secrets.MONGO_SERV }}'};" > public/env.js
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.MONGO_SERV }}
-        publish_dir: ./public
+        - name: Deploy to GitHub Pages
+          uses: peaceiris/actions-gh-pages@v3
+          with:
+            github_token: ${{ secrets.MONGO_SERV }}
+            publish_dir: ./public
