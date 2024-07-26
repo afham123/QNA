@@ -18,7 +18,7 @@ jobs:
       # example-command "$SUPER_SECRET}}
       - name: Inject secrets into config
         run: |
-          echo "window._env_ = {GITHUB_TOKEN: '${{ secrets.MONGO_SERV }}'};" > env.js
+          echo "window._env_ = {GITHUB_TOKEN: '${{ secrets.MONGO_SERV }}'};" > public/env.js
       # - name: Deploy to GitHub Pages
       #   uses: afham123/QNA
       #   with:
