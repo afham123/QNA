@@ -23,7 +23,7 @@ jobs:
 
       - name: Inject secrets into config
         run: |
-          echo "window._env_ = {GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'};" > public/env.js
+          echo "window._env_ = {GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'};" > index.js
 
       - name: Build project
         run: npm run build
