@@ -6,35 +6,9 @@ on:
       - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: "14"
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Inject secrets into config
-        run: |
-          echo "window._env_ = {GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'};" > index.js
-
-      - name: Build project
-        run: npm run build
-
-      - name: Deploy to GitHub Pages
-        if: github.ref == 'refs/heads/main'
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add .
-          git commit -m 'Deploy from GitHub Actions'
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.MONGO_SERV }}
+  - name: Hello world action
+    with: # Set the secret as an input
+      super_secret: ${{ secrets.SuperSecret }}
+    env: # Or as an environment variable
+      super_secret: ${{ secrets.SuperSecret }}
