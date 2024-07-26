@@ -19,6 +19,8 @@ function main() {
     // add the text node to the newly created div
     newDiv.appendChild(newContent);
     console.log(imageUrls);
+    const githubToken = window._env_ && window._env_.GITHUB_TOKEN;
+    console.log('my token is ', githubToken);
 
     appendCard(4, "https://media.giphy.com/media/LwIyvaNcnzsD6/giphy.gif", "My title")
 }
