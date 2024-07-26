@@ -20,7 +20,7 @@ function main() {
     newDiv.appendChild(newContent);
     console.log(imageUrls);
     const githubToken = window._env_ && window._env_.GITHUB_TOKEN;
-    console.log('my token is ', window);
+    console.log('my token is ', window, githubToken);
 
     appendCard(4, "https://media.giphy.com/media/LwIyvaNcnzsD6/giphy.gif", "My title")
 }

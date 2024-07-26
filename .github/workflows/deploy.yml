@@ -15,4 +15,4 @@ jobs:
 
   - name: Inject secrets into config
     run: |
-      echo "window._env_ = {GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'};" > env.js
+      echo "window._env_ = {GITHUB_TOKEN: '${{ secrets.MONGO_SERV }}'};" > env.js

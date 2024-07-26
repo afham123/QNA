@@ -1,0 +1,4 @@
+   Hi I have stored a secret key in github secret and now I wanted to use that in the js file, so I heve added this lines in .github/workflow  yml file,    
+   env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
+   Now how to access these secrets keys in the js file.
