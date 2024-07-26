@@ -19,8 +19,8 @@ jobs:
       - name: Inject secrets into config
         run: |
           echo "window._env_ = {GITHUB_TOKEN: '${{ secrets.MONGO_SERV }}'};" > env.js
-      - name: Deploy to GitHub Pages
-        uses: afham123/QNA
-        with:
-          github_token: ${{ secrets.MONGO_SERV }}
-          publish_dir: ./
+      # - name: Deploy to GitHub Pages
+      #   uses: afham123/QNA
+      #   with:
+      #     github_token: ${{ secrets.MONGO_SERV }}
+      #     publish_dir: ./
