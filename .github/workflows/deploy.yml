@@ -20,7 +20,7 @@ jobs:
         run: |
           echo "window._env_ = {GITHUB_TOKEN: '${{ secrets.MONGO_SERV }}'};" > env.js
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: afham123/QNA@v3
         with:
           github_token: ${{ secrets.MONGO_SERV }}
           publish_dir: ./
